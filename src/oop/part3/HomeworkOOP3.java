@@ -1,4 +1,4 @@
-package oop.part3;
+/*package oop.part3;
 
 import oop.part3.Animals.*;
 import oop.part3.transport.Bus;
@@ -83,4 +83,4 @@ public class HomeworkOOP3 {
         System.out.println("gazelle.equals(giraffe) = " + gazelle.equals(giraffe));
         System.out.println("gazelle.equals(horse) = " + gazelle.equals(horse));
     }
-}
+}*/
