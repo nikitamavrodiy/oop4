@@ -1,4 +1,4 @@
-package Animals;
+package oop.part3.Animals;
 
 import java.util.Objects;
 
@@ -60,7 +60,7 @@ public abstract class Animals {
 
     @Override
     public String toString() {
-        return "Animals{" +
+        return "oop.part3.Animals{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';

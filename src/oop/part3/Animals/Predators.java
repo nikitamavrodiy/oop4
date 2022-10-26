@@ -1,15 +1,13 @@
-package Animals;
+package oop.part3.Animals;
 
 import java.util.Objects;
 
-public class Herbivores extends Mammals {
+public class Predators extends Mammals {
     private final String foodType;
 
-    public Herbivores(String name, int age, String livingEnvironment, int movementSpeed, String foodType) {
+    public Predators(String name, int age, String livingEnvironment, int movementSpeed, String foodType) {
         super(name, age, livingEnvironment, movementSpeed);
         this.foodType = checkCondition(foodType);
-
-
     }
 
     public String getFoodType() {
@@ -17,15 +15,15 @@ public class Herbivores extends Mammals {
     }
 
     public final void eat() {
-        System.out.println("Травоядное " + this.getName() + " пасётся");
+        System.out.println("Хищник " + this.getName() + " охотится");
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Herbivores that = (Herbivores) o;
-        return Objects.equals(foodType, that.foodType);
+        Predators predators = (Predators) o;
+        return Objects.equals(foodType, predators.foodType);
     }
 
     @Override
@@ -35,7 +33,7 @@ public class Herbivores extends Mammals {
 
     @Override
     public String toString() {
-        return "Herbivores{" + super.toString() +
+        return "Predators{" + super.toString() +
                 "foodType='" + foodType + '\'' +
                 '}';
     }

@@ -1,4 +1,4 @@
-package transport;
+package oop.part3.transport;
 
 public class Bus extends Transport {
     public Bus(String brand, String model, int manufactureYear, String manufactureCountry, String bodyColor, int maximumSpeed) {

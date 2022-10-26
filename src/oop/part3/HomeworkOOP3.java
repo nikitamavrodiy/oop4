@@ -1,10 +1,12 @@
-import Animals.*;
-import transport.Bus;
-import transport.Car;
-import transport.Train;
+package oop.part3;
+
+import oop.part3.Animals.*;
+import oop.part3.transport.Bus;
+import oop.part3.transport.Car;
+import oop.part3.transport.Train;
 
 
-public class Main {
+public class HomeworkOOP3 {
     public static void main(String[] args) {
         //homework 1
         System.out.println("\nhomework 2\n");
@@ -12,7 +14,7 @@ public class Main {
         Car.Key key = new Car.Key(true, true);
         Car.Insurance insurance = new Car.Insurance(null, 250.50f, "3423343039");
 
-        transport.Car carDefault = new transport.Car("BMW", "x5", 20010, null, "Yellow", 300, 0, "automat", "У343ХА053", " ", "Winter", 4, key, insurance, true);
+        oop.part3.transport.Car carDefault = new oop.part3.transport.Car("BMW", "x5", 20010, null, "Yellow", 300, 0, "automat", "У343ХА053", " ", "Winter", 4, key, insurance, true);
 
         System.out.println(carDefault+"\n");
 
@@ -43,8 +45,8 @@ public class Main {
         bus2.refill();
         bus3.refill();
 
-        //homework 3 Animals
-        System.out.println("\nhomework 3 - Animals\n");
+        //homework 3 oop.part3.Animals
+        System.out.println("\nhomework 3 - oop.part3.Animals\n");
 
         Herbivores gazelle = new Herbivores("Газель", 0, "Саванна", 50, "Трава");
         Herbivores giraffe = new Herbivores("Жираф", 4, "Саванна", 55, "Листья");

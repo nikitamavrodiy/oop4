@@ -1,4 +1,4 @@
-package Animals;
+package oop.part3.Animals;
 
 import java.util.Objects;
 

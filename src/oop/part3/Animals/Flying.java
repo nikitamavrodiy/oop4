@@ -1,17 +1,17 @@
-package Animals;
+package oop.part3.Animals;
 
 import java.util.Objects;
 
-public class Unflying extends Birds {
+public class Flying extends Birds {
     private final String movementType;
 
-    public Unflying(String name, int age, String livingEnvironment, String movementType) {
+    public Flying(String name, int age, String livingEnvironment, String movementType) {
         super(name, age, livingEnvironment);
         this.movementType = checkCondition(movementType);
     }
 
     public final void go() {
-        System.out.println("Птица " + this.getMovementType() + " - " + this.getName() + " гуляет");
+        System.out.println("Птица(" + this.getClass().getName() + ") " + this.getName() + " летает");
     }
 
     public final String getMovementType() {
@@ -22,8 +22,8 @@ public class Unflying extends Birds {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Unflying unflying = (Unflying) o;
-        return Objects.equals(movementType, unflying.movementType);
+        Flying flying = (Flying) o;
+        return Objects.equals(movementType, flying.movementType);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Unflying extends Birds {
 
     @Override
     public String toString() {
-        return "Unflying{" + super.toString() +
+        return "Flying{" + super.toString() +
                 "movementType='" + movementType + '\'' +
                 '}';
     }

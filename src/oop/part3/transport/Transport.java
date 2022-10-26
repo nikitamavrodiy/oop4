@@ -1,4 +1,4 @@
-package transport;
+package oop.part3.transport;
 
 public abstract class Transport {
     private final String brand;

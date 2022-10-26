@@ -1,4 +1,4 @@
-package transport;
+package oop.part3.transport;
 
 public class Train extends Transport {
     private int tripPrice;
