@@ -12,7 +12,7 @@ public class Main {
         Car.Key key = new Car.Key(true, true);
         Car.Insurance insurance = new Car.Insurance(null, 250.50f, "3423343039");
 
-        transport.Car carDefault = new transport.Car(0, "automat", "У343ХА053", " ", "Winter", 4, key, insurance, true);
+        transport.Car carDefault = new transport.Car("BMW", "x5", 20010, null, "Yellow", 300, 0, "automat", "У343ХА053", " ", "Winter", 4, key, insurance, true);
 
         System.out.println(carDefault+"\n");
 
@@ -25,14 +25,13 @@ public class Main {
         System.out.println(leningrad);
         System.out.println();
 
-        Bus bus = new Bus();
-        Bus busCopy = new Bus(bus);
-        busCopy.setBodyColor("PinkFloid"); //чтоб отличить
-        Bus realBus = new Bus("SchoolShkoda", "superSchoolBus", 2022, "Russia", "Yellow", 270);
+        Bus bus1 = new Bus("SchoolShkoda1", "superSchoolBus1", 2011, "Russia1", "Yellow", 270);
+        Bus bus2 = new Bus("SchoolShkoda2", "superSchoolBus2", 2012, "Russia2", null, 250);
+        Bus bus3 = new Bus("SchoolShkoda3", "superSchoolBus3", 2013, "Russia3", "Yellow", 290);
 
-        System.out.println(bus);
-        System.out.println(busCopy);
-        System.out.println(realBus);
+        System.out.println(bus1);
+        System.out.println(bus2);
+        System.out.println(bus3);
 
         //homework 2
         System.out.println("\nhomework 2\n");
@@ -40,9 +39,9 @@ public class Main {
         carDefault.refill();
         lastochka.refill();
         leningrad.refill();
-        bus.refill();
-        busCopy.refill();
-        realBus.refill();
+        bus1.refill();
+        bus2.refill();
+        bus3.refill();
 
         //homework 3 Animals
         System.out.println("\nhomework 3 - Animals\n");

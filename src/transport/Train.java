@@ -7,15 +7,6 @@ public class Train extends Transport {
     private String finalStation;
     private int wagonsNumber;
 
-    public Train(Train ob) {
-        super(ob);
-        this.tripPrice = ob.tripPrice;
-        this.journeyTime = ob.journeyTime;
-        this.departureStation = ob.departureStation;
-        this.finalStation = ob.finalStation;
-        this.wagonsNumber = ob.wagonsNumber;
-    }
-
     public Train(String brand, String model, int manufactureYear, String manufactureCountry, String bodyColor, int maximumSpeed, int tripPrice, int journeyTime, String departureStation, String finalStation, int wagonsNumber) {
         super(brand, model, manufactureYear, manufactureCountry, bodyColor, maximumSpeed);
         this.tripPrice = checkCondition(tripPrice, 9999);
@@ -23,14 +14,6 @@ public class Train extends Transport {
         this.departureStation = checkCondition(departureStation);
         this.finalStation = checkCondition(finalStation);
         this.wagonsNumber = checkCondition(wagonsNumber, 99);
-    }
-
-    public Train() {
-        this.tripPrice = 9999;
-        this.journeyTime = 99;
-        this.departureStation = "default";
-        this.finalStation = "default";
-        this.wagonsNumber = 99;
     }
 
     public double getTripPrice() {
@@ -71,20 +54,6 @@ public class Train extends Transport {
 
     public void setWagonsNumber(int wagonsNumber) {
         this.wagonsNumber = wagonsNumber;
-    }
-
-    private static String checkCondition(String check) {
-        return check = check != null && !check.isBlank() ? check : "default";
-    }
-
-    private int checkCondition(int check, int def) {
-        if (check < 0) {
-            return Math.abs(check);
-        } else if (check == 0) {
-            return def;
-        } else {
-            return check;
-        }
     }
 
     public String toString() {

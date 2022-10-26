@@ -8,31 +8,13 @@ public abstract class Transport {
     private String bodyColor;
     private int maximumSpeed;
 
-    public Transport(Transport ob) {
-        this.brand = ob.brand;
-        this.model = ob.model;
-        this.manufactureYear = ob.manufactureYear;
-        this.manufactureCountry = ob.manufactureCountry;
-        setBodyColor(ob.bodyColor);
-        setMaximumSpeed(ob.maximumSpeed);
-    }
-
     public Transport(String brand, String model, int manufactureYear, String manufactureCountry, String bodyColor, int maximumSpeed) {
-        this.brand = brand;
-        this.model = model;
-        this.manufactureYear = manufactureYear;
-        this.manufactureCountry = manufactureCountry;
+        this.brand = checkCondition(brand);
+        this.model = checkCondition(model);
+        this.manufactureYear = checkCondition(manufactureYear, 2000);
+        this.manufactureCountry = checkCondition(manufactureCountry);
         setBodyColor(bodyColor);
         setMaximumSpeed(maximumSpeed);
-    }
-
-    public Transport() {
-        this.brand = "default";
-        this.model = "default";
-        this.manufactureYear = 2000;
-        this.manufactureCountry = "default";
-        setBodyColor("White");
-        setMaximumSpeed(140);
     }
 
     public String getBodyColor() {
@@ -40,22 +22,15 @@ public abstract class Transport {
     }
 
     public void setBodyColor(String bodyColor) {
-        this.bodyColor = bodyColor != null && !bodyColor.isBlank() ? bodyColor : "White";
+        this.bodyColor = checkCondition(bodyColor, "White");
     }
 
     public int getMaximumMovementSpeed() {
         return maximumSpeed;
-
     }
 
-    public void setMaximumSpeed(int maximumMovementSpeed) {
-        if (maximumMovementSpeed < 0) {
-            this.maximumSpeed = Math.abs(maximumMovementSpeed);
-        } else if (maximumMovementSpeed == 0) {
-            this.maximumSpeed = 140;
-        } else {
-            this.maximumSpeed = maximumMovementSpeed;
-        }
+    public void setMaximumSpeed(int maximumSpeed) {
+        this.maximumSpeed = checkCondition(maximumSpeed, 160);
     }
 
     public String getBrand() {
@@ -72,6 +47,24 @@ public abstract class Transport {
 
     public String getManufactureCountry() {
         return manufactureCountry;
+    }
+
+    public static final String checkCondition(String check) {
+        return check != null && !check.isBlank() ? check : "default";
+    }
+
+    public final String checkCondition(String check, String def) {
+        return check != null && !check.isBlank() ? check : def;
+    }
+
+    public final int checkCondition(int check, int def) {
+        if (check < 0) {
+            return Math.abs(check);
+        } else if (check == 0) {
+            return def;
+        } else {
+            return check;
+        }
     }
 
     public String toString() {

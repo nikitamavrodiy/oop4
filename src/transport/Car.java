@@ -33,27 +33,6 @@ public class Car extends Transport {
         setTransmission(transmission);
         setEngineVolume(engineVolume);
     }
-
-    public Car(double engineVolume, String transmission, String registrationNumber, String bodyType, String tyresType,
-               int seatsNumber, Key key, Insurance insurance, boolean isElectroCar) {
-        super();
-        this.bodyType = checkCondition(bodyType);
-        this.tyresType = checkCondition(tyresType);
-        this.key = key;
-        this.insurance = insurance;
-        this.isElectroCar = isElectroCar;
-        if (seatsNumber == 0) {
-            this.seatsNumber = 40;
-        } else {
-            this.seatsNumber = seatsNumber < 0 ? Math.abs(seatsNumber) : seatsNumber;
-        }
-        setRegistrationNumber(registrationNumber);
-        setTyresType(tyresType);
-        setTransmission(transmission);
-        setEngineVolume(engineVolume);
-    }
-
-
     public boolean isRegNumberValid() {
         if (this.registrationNumber.length() != 9) {
             return false;
@@ -126,10 +105,6 @@ public class Car extends Transport {
 
     public int getSeatsNumber() {
         return seatsNumber;
-    }
-
-    private static String checkCondition(String check) {
-        return check = check != null && !check.isEmpty() && !check.isBlank() ? check : "default";
     }
 
     public double getEngineVolume() {
